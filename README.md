@@ -1,23 +1,20 @@
 # GTLCalendar
 
 
-選取一個範圍的日曆
+选取一个时间段的日历，根据GTLCalendar源码修改的一个自定义库
 
 Usage
 =============
 
 1.初始化
 ```
-// frame
-CGFloat screenWidth = CGRectGetWidth([UIScreen mainScreen].bounds);
-CGFloat screenHeight = CGRectGetHeight([UIScreen mainScreen].bounds);
-CGRect frame = CGRectMake(0, 0, screenWidth, screenHeight);
-    
-// GTLCalendar
-GTLCalendarView *gtlCalendarView = [[GTLCalendarView alloc] initWithFrame:frame];
-gtlCalendarView.dataSource = self;
-gtlCalendarView.delegate = self;
-[self.view addSubview:gtlCalendarView];
+ 
+ _gtlCalendarView = [GTLCalendarView shareinstance];
+ _gtlCalendarView.dataSource = self;
+ _gtlCalendarView.delegate = self;
+dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+[self.gtlCalendarView show];
+});
 ```
 
 2.dataSource
@@ -63,4 +60,9 @@ Method
 ```
 - (void)clear;        // 清除所有選擇的日期
 - (void)reloadData;   // reload GTLCalendar
+- (void)selectRangeDayBlock:(void(^)(NSDate *fromDate, NSDate *toDate))rangeDayBlock // 点击确定后的回调;
+/// 显示视图
+- (void)show;
+/// 隐藏视图
+- (void)hide;
 ```

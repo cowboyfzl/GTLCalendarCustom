@@ -336,12 +336,12 @@ static NSInteger const GTLCanlendarContentViewHeight = 533;
         if (self.selectFromDate && self.selectToDate) {
             _doneButton.enabled = true;
             NSInteger day = [NSCalendar daysFromDate:self.selectFromDate toDate:self.selectToDate];
-            [_doneButton setTitle:[NSString stringWithFormat:@"确定(共%ld天)", (long)day] forState:UIControlStateNormal];
+            [_doneButton setTitle:[NSString stringWithFormat:@"确定(共%ld天)", (long)day + 1] forState:UIControlStateNormal];
             _doneButton.backgroundColor = [UIColor colorWithHex:0xff714a];
         } else if(self.selectFromDate) {
-            [_doneButton setTitle:@"确定" forState:UIControlStateNormal];
-            _doneButton.enabled = false;
-            _doneButton.backgroundColor = [UIColor lightGrayColor];
+             [_doneButton setTitle:@"确定(共1天)" forState:UIControlStateNormal];
+            _doneButton.enabled = true;
+            _doneButton.backgroundColor = [UIColor colorWithHex:0xff714a];
         } else {
             [_doneButton setTitle:@"确定" forState:UIControlStateNormal];
             _doneButton.enabled = false;
@@ -509,19 +509,22 @@ static NSInteger const GTLCanlendarContentViewHeight = 533;
     
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     self.backgroundColor = [UIColor colorWithHex:0x000000 alpha:0.5];
+    self.alpha = 0.2;
     self.frame = window.bounds;
     [window addSubview:self];
     [self addSubview:self.contentView];
     [self setupInitValues];
     [self setupCollectionViews];
     [UIView animateWithDuration:0.2 animations:^{
+        self.alpha = 1;
         self.contentView.frame = CGRectMake(CGRectGetMinX(self.contentView.frame),  CGRectGetHeight(self.frame) - GTLCanlendarContentViewHeight, CGRectGetWidth(self.contentView.frame), CGRectGetHeight(self.contentView.frame));
     }];
 }
 
 - (void)hide {
     [UIView animateWithDuration:0.2 animations:^{
-         self.contentView.frame = CGRectMake(CGRectGetMinX(self.contentView.frame),  CGRectGetHeight(self.frame), CGRectGetWidth(self.contentView.frame), CGRectGetHeight(self.contentView.frame));
+         self.alpha = 0.2;
+         self.contentView.frame = CGRectMake(self.contentView.frame.origin.x,  self.bounds.size.height, CGRectGetWidth(self.contentView.frame), CGRectGetHeight(self.contentView.frame));
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
     }];
