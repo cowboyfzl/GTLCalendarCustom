@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GTLCalendarCell">
+            <rect key="frame" x="0.0" y="0.0" width="30" height="97"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="30" height="97"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtQ-ch-pTz">
+                        <rect key="frame" x="0.0" y="32.5" width="30" height="32"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aL0-0L-2HM">
+                        <rect key="frame" x="0.0" y="64.5" width="30" height="32.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7p-vh-Gpl">
+                        <rect key="frame" x="0.0" y="0.0" width="30" height="32.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="aL0-0L-2HM" firstAttribute="top" secondItem="rtQ-ch-pTz" secondAttribute="bottom" id="0Rp-Ib-SMV"/>
+                <constraint firstItem="K7p-vh-Gpl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5hO-cf-qig"/>
+                <constraint firstItem="aL0-0L-2HM" firstAttribute="height" secondItem="K7p-vh-Gpl" secondAttribute="height" id="7nm-tI-6K0"/>
+                <constraint firstItem="aL0-0L-2HM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="D0N-dn-bog"/>
+                <constraint firstAttribute="trailing" secondItem="rtQ-ch-pTz" secondAttribute="trailing" id="FMM-Tb-VeL"/>
+                <constraint firstItem="rtQ-ch-pTz" firstAttribute="top" secondItem="K7p-vh-Gpl" secondAttribute="bottom" id="Qah-bR-oxs"/>
+                <constraint firstItem="K7p-vh-Gpl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TjS-0a-Dkr"/>
+                <constraint firstAttribute="trailing" secondItem="K7p-vh-Gpl" secondAttribute="trailing" id="fEx-an-fG4"/>
+                <constraint firstAttribute="bottom" secondItem="aL0-0L-2HM" secondAttribute="bottom" id="gaR-Nk-gKt"/>
+                <constraint firstItem="rtQ-ch-pTz" firstAttribute="height" secondItem="K7p-vh-Gpl" secondAttribute="height" id="gvt-8a-b6b"/>
+                <constraint firstItem="rtQ-ch-pTz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="n4C-vy-PLO"/>
+                <constraint firstAttribute="trailing" secondItem="aL0-0L-2HM" secondAttribute="trailing" id="tFP-ac-WM5"/>
+            </constraints>
+            <size key="customSize" width="111" height="171"/>
+            <connections>
+                <outlet property="dayLabel" destination="rtQ-ch-pTz" id="Q97-Aq-0SK"/>
+                <outlet property="descriptionLabel" destination="aL0-0L-2HM" id="pFx-rA-Goc"/>
+                <outlet property="lunarCalendarLabel" destination="K7p-vh-Gpl" id="cEB-92-F3j"/>
+            </connections>
+            <point key="canvasLocation" x="-292.80000000000001" y="-24.7376311844078"/>
+        </collectionViewCell>
+    </objects>
+</document>
